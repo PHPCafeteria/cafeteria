@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders</title>
+    <link rel="stylesheet" href="CSS/my-orders.css">
+    <script src="JS/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <header></header>
+    <main>
+        <section id="date-pickers">
+            <label for="from-date">From: </label>
+            <input type="datetime-local" id="from-date" name="from-date">
+            <label for="to-date">To: </label>
+            <input type="datetime-local" id="to-date" name="to-date">
+        </section>
+        <section id="table-container">
+            <table>
+                <tr>
+                    <th>Order Date</th>
+                    <th>Status</th>
+                    <th>Amount</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>
+                        <span></span>
+                        <button>+</button>
+                    </td>
+                    <td>processing</td>
+                    <td>55 EGP</td>
+                    <td>cancel</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span></span>
+                        <button>+</button>
+                    </td>
+                    <td>processing</td>
+                    <td>55 EGP</td>
+                    <td>cancel</td>
+                </tr>
+            </table>
+        </section>
+        <section id="display-section">
+
+        </section>
+    </main>
+    <footer></footer>
+    <script src="JS/myOrder.js"></script>
+</body>
+</html>
