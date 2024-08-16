@@ -7,7 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', '1');
+        require('../DB.php');
+        $n = new ConnectionDB;
+        echo $n->Connection();
+        $sql = 'select * from user';
+        $stataus = $n->db->prepare($sql);
+        $stataus->execute();
+        $result = $stataus->fetchAll(PDO::FETCH_ASSOC);
+        echo '<br>';
+        print_r($result);
+    ?>
     <h1 style="margin-left: 10%; font-size: 50px;">Orders</h1>
     <div class="container">
         <table cellspacing="0" cellpadding="1">
