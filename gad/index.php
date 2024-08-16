@@ -33,13 +33,9 @@
                 <img src="1.jpeg" alt="">
                 <img src="1.jpeg" alt="">
                 <img src="1.jpeg" alt="">
-
             </div>
-            <span style="float:right; margin-right: 5%; font-size: 30px;">Total: EGP 50</span>
+            <span style="float:right; margin-right: 5%; font-size: 30px;">Total: EGP 500000</span>
         </div>
     </div>
-    
-
-      
 </body>
 </html>

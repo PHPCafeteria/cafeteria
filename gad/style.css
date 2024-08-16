@@ -14,8 +14,8 @@ table{
 
 .orders{
     width: 100%;
-    height: 50%;
-    padding: 2% 2% 2% 1%;
+    height: 30%;
+    padding: 2% 2% 5% 1%;
     min-width: 50%;
     margin-bottom: 1.5%;
 
@@ -26,15 +26,15 @@ td,th{
 }
 th{
     background-color: gray;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 td{
     background-color: rgb(228, 226, 226);
-    font-size: 1.5rem;
+    font-size: 0.75rem;
     border-bottom: 2px solid black;
 }
 img{
-    width: calc(80%/ 6);
-    height: 280px;
-    margin:2% 3% 2% 3%; 
+    min-width: calc(80%/ 6);
+    height: 120px;
+    margin:2% 1.1% 2% 1.1%; 
 }
