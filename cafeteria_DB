@@ -18,7 +18,6 @@ alter table user modify id int auto_increment;
 create table room(
    -> roomNo int primary key,
    -> ext int,
-   ->name varchar(30)
    ->);
 
 
