@@ -8,7 +8,7 @@ ini_set('display_errors', '1');
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     // Validate user autorization
-    if (isset($_GET['userId']) && is_numeric($_GET['userId'])) {
+    if (isset($_GET['userId'])) {
 
         // Validate input dates
         if ($_GET['startDate'] && $_GET['endDate']) {
@@ -23,8 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $statement->execute([$userId, $_GET['startDate'], $_GET['endDate']]);
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
             $arr = array();
-            foreach($result as $y){
-                array_push($arr, $y);
+            foreach ($result as $r) {
+                array_push($arr, $r);
             }
             // echo '<br>'; // shall be removed
             // var_dump($result);

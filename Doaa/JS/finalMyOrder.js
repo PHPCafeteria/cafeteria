@@ -20,7 +20,7 @@ async function getDataFromDB() {
         let data = await fetch(url);
 
         let userOrders = await data.json();
-        console.log(userOrders);
+        // console.log(userOrders);
         displayResults(userOrders);
     }
     catch (e) {
@@ -44,7 +44,7 @@ function displayResults(userOrders) {
         //1st td
         let orderDateControl = document.createElement("td");
         let orderDate = document.createElement("span");
-        orderDate.textContent = userOrder.date;                   /////////////////////
+        orderDate.textContent = userOrder.date;                   
         orderDateControl.appendChild(orderDate);
 
         let button = document.createElement("button");
@@ -54,11 +54,11 @@ function displayResults(userOrders) {
 
         //2nd td
         let status = document.createElement("td");
-        status.textContent = userOrder.status;               /////////////////////
+        status.textContent = userOrder.status;               
 
         //3rd td
         let amount = document.createElement("td");
-        amount.textContent = userOrder.totalPrice;               /////////////////////        
+        amount.textContent = userOrder.totalPrice;                       
 
         //4th td if there is any
         let action = document.createElement("td");
@@ -75,16 +75,9 @@ function displayResults(userOrders) {
     });
 }
 
-// Get orders data
-// const buttons = document.querySelectorAll("#table button");
-
-// buttons.forEach(button => {
-//     button.addEventListener("click", () => controlOrderDisplay(button));
-// });
-
 // Control order details display
+const container = document.getElementById("display-section");
 async function controlOrderDisplay(button, orderId) {
-    const container = document.getElementById("display-section");
 
     // Confirm that order is not already shown
     if (button.textContent === "+") {
@@ -94,7 +87,7 @@ async function controlOrderDisplay(button, orderId) {
         try {
             //////// depends on DB ////////
             let orderDetails = await fetch(`/cafeteria/Doaa/PHP/order_details.php?orderId=${orderId}`);
-            const orderItems = await orderDetails.json();
+            let orderItems = await orderDetails.json();
             displayOrder(orderItems);
         } catch (e) {
             console.log("Error in getting orders: ", e);
@@ -113,10 +106,25 @@ async function controlOrderDisplay(button, orderId) {
 
 // Display order items
 function displayOrder(orderItems) {
-    orderItem.forEach(order => {
-        let divItem = document.createElement("div");
-        divItem.className = "order-item";
-        divItem.textContent = order.title;               /////////////////////
-        container.appendChild(divItem);
+    orderItems.forEach(orderItem => {
+        // Display item name 
+        let name = document.createElement("div");
+        name.textContent = orderItem.name;
+        container.appendChild(name);
+
+        // Display item price (price/item only)
+        let price = document.createElement("div");
+        price.textContent = orderItem.price;
+        container.appendChild(price);
+
+        // Display item image 
+        let picture = document.createElement("div");
+        picture.textContent = orderItem.picture;
+        container.appendChild(picture);
+
+        // Display number of each ordered item 
+        let numOfProduct = document.createElement("div");
+        numOfProduct.textContent = orderItem.numOfProduct;
+        container.appendChild(numOfProduct);
     });
 }
