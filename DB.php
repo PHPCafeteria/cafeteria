@@ -19,7 +19,11 @@ class ConnectionDB {
             http_response_code(500);
             echo json_encode(['error' => 'Error connecting to the database: ' . $e->getMessage()]);
             exit;
+            // echo 'connect done';
         }
+        // catch(PDOException $e){
+        //     echo 'connect failed '.$e->getMessage();
+        // }
     }
 
     public function fetchProducts() {

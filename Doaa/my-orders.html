@@ -15,16 +15,17 @@
             <input type="datetime-local" id="from-date" name="from-date">
             <label for="to-date">To: </label>
             <input type="datetime-local" id="to-date" name="to-date">
+            <input type="button" value="Get My Orders" name="Get My Orders" onclick="getDataFromDB();">
         </section>
         <section id="table-container">
-            <table>
+            <table id="table">
                 <tr>
                     <th>Order Date</th>
                     <th>Status</th>
                     <th>Amount</th>
                     <th>Action</th>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>
                         <span></span>
                         <button>+</button>
@@ -41,14 +42,12 @@
                     <td>processing</td>
                     <td>55 EGP</td>
                     <td>cancel</td>
-                </tr>
+                </tr> -->
             </table>
         </section>
-        <section id="display-section">
-
-        </section>
+        <section id="display-section"></section>
     </main>
     <footer></footer>
-    <script src="JS/myOrder.js"></script>
+    <script src="JS/finalMyOrder.js"></script>
 </body>
 </html>
