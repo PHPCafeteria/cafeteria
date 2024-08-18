@@ -1,0 +1,28 @@
+.navbar{
+    background-color:#74512D;
+    height: 8vh;
+}
+
+.border{
+    color:rgb(180, 138, 0) ;
+}
+
+body{
+    background-image: url("php project/background4.jpg");
+    background-repeat: no-repeat;
+    background-size:130%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.card {
+background-color: #F8F4E1;
+}
+
+button{
+    background-color: #74512D;
+    color:white;
+    font-weight: bolder;
+    border: none;
+    border-radius: 3%;
+}
+
