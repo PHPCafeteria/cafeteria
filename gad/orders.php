@@ -13,7 +13,7 @@
         require('../DB.php');
         $n = new ConnectionDB;
         echo $n->Connection();
-        $sql = 'select * from user';
+        $sql = 'select * from product';
         $stataus = $n->db->prepare($sql);
         $stataus->execute();
         $result = $stataus->fetchAll(PDO::FETCH_ASSOC);
