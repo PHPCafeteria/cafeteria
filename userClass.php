@@ -5,11 +5,10 @@
 
     require('../DB.php');
 
-    class user{
+    class User{
         private $name, $email, $password, $roomNo, $picture;
         // id is auto-increament
         function __construct($name, $email,$password, $roomNo,$picture){
-            $this->id=$id;
             $this->name=$name;
             $this->email=$email;
             $this->password=$password;
