@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $sql = 'select product.name, product.price, product.picture, orderProduct.numOfProduct 
         from orders join product join orderProduct 
         where orders.idOrder = ? and orders.idOrder = orderProduct.idOrder 
-        and product.idProduct = orderProduct.idProduct';
+        and product.idProduct = orderProduct.idProduct and orders.action = 0';
         $statement = $conn->db->prepare($sql);
         $statement->execute([$orderId]);
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
