@@ -49,5 +49,13 @@
             print_r($result);
         }
 
+        public function fetchProducts() {
+            $sql = 'SELECT name, price, picture FROM product';
+            $stmt = $this->db->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        
+
     }
 ?>

@@ -49,5 +49,12 @@
             print_r($result);
         }
 
+
+        public function fetchUsers() {
+            $sql = 'SELECT name, roomNo, picture FROM user';
+            $stmt = $this->db->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
     }
 ?>

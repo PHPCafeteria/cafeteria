@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User List</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -35,36 +37,40 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Users will be dynamically inserted here -->
+        <!-- User rows will be dynamically inserted here -->
       </tbody>
     </table>
   </main>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      fetch('../DB.php?type=users')
-        .then(response => response.json())
+      fetch('http://localhost:8000/david/Products_Users.php?type=users')
+        .then(response => {
+          if (!response.ok) {
+            return response.json().then(data => Promise.reject(data.error));
+          }
+          return response.json();
+        })
         .then(data => {
           const tableBody = document.querySelector('#userTable tbody');
-          if (tableBody) {
+          if (Array.isArray(data)) { // Ensure data is an array
             data.forEach(user => {
               const row = document.createElement('tr');
               row.innerHTML = `
                 <td>${user.name}</td>
                 <td>${user.roomNo}</td>
                 <td><img src="${user.picture}" alt="${user.name}" width="50"></td>
-                <td>EXT Placeholder</td>
-                <td><button>edit</button><button>delete</button></td>
+                <td>EXT Placeholder</td> <!-- Replace with actual data if available -->
+                <td><button>Edit</button><button>Delete</button></td>
               `;
               tableBody.appendChild(row);
             });
           } else {
-            console.error('Table body not found');
+            console.error('Data format is incorrect');
           }
         })
         .catch(error => console.error('Error:', error));
     });
   </script>
-  
 </body>
 </html>

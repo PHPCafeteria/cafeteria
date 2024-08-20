@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product List</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -21,7 +23,7 @@
   <main>
     <div class="header-container">
       <h1>All Products</h1>
-      <button>Add product</button>
+      <button>Add Product</button>
     </div>
 
     <table id="productTable">
@@ -34,14 +36,14 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Products will be dynamically inserted here -->
+        <!-- Product rows will be dynamically inserted here -->
       </tbody>
     </table>
   </main>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      fetch('../DB.php?type=products') 
+      fetch('http://localhost:8000/david/Products_Users.php?type=products')
         .then(response => {
           if (!response.ok) {
             return response.json().then(data => Promise.reject(data.error));
@@ -49,21 +51,26 @@
           return response.json();
         })
         .then(data => {
+          console.log('Fetched data:', data);
           const tableBody = document.querySelector('#productTable tbody');
-          data.forEach(product => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-              <td>${product.name}</td>
-              <td>${product.price} EGP</td>
-              <td><img src="${product.picture}" alt="${product.name} image" width="50"></td>
-              <td><button>edit</button><button>delete</button></td>
-            `;
-            tableBody.appendChild(row);
-          });
+          if (tableBody) {
+            tableBody.innerHTML = '';
+            data.forEach(product => {
+              const row = document.createElement('tr');
+              row.innerHTML = `
+                <td>${product.name}</td>
+                <td>${product.price} EGP</td>
+                <td><img src="${product.picture}" alt="${product.name} image" width="50"></td>
+                <td><button>Edit</button><button>Delete</button></td>
+              `;
+              tableBody.appendChild(row);
+            });
+          } else {
+            console.error('Table body not found');
+          }
         })
         .catch(error => console.error('Error:', error));
     });
   </script>
-
 </body>
 </html>
