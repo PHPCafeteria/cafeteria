@@ -44,7 +44,7 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      fetch('http://localhost:8000/david/Products_Users.php?type=products')
+      fetch('http://localhost/cafeteria/david/Product.php?type=products')
         .then(response => {
           if (!response.ok) {
             return response.json().then(data => Promise.reject(data.error));

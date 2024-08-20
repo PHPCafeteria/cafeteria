@@ -8,7 +8,7 @@
     class User{
         private $name, $email, $password, $roomNo, $picture;
         // id is auto-increament
-        function __construct($name, $email,$password, $roomNo,$picture){
+        function __construct($name="", $email="",$password="", $roomNo=0,$picture=""){
             $this->name=$name;
             $this->email=$email;
             $this->password=$password;
@@ -51,10 +51,12 @@
 
 
         public function fetchUsers() {
+            $t = new ConnectionDB;
+            $t->Connection();
             $sql = 'SELECT name, roomNo, picture FROM user';
-            $stmt = $this->db->prepare($sql);
+            $stmt = $t->db->prepare($sql);
             $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
         }
     }
 ?>

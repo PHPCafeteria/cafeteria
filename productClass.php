@@ -8,7 +8,7 @@
     class Prudect{
         private $name, $price, $available, $picture, $idCatogry;
         // id is auto-increament
-        function __construct($name, $price, $available, $picture, $idCatogry){
+        function __construct($name="", $price=0, $available=1, $picture="", $idCatogry=0){
             $this->name=$name;
             $this->price=$price;
             $this->available=$available;
@@ -50,10 +50,12 @@
         }
 
         public function fetchProducts() {
+            $t = new ConnectionDB;
+            $t->Connection();
             $sql = 'SELECT name, price, picture FROM product';
-            $stmt = $this->db->prepare($sql);
+            $stmt = $t->db->prepare($sql);
             $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
         }
         
 
