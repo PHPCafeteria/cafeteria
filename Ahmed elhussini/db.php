@@ -1,7 +1,7 @@
 <?php
 
 $host = 'localhost';
-$db = 'products';
+$db = 'cafeteria';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';

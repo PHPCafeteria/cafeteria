@@ -9,6 +9,7 @@ error_reporting(E_ALL);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Product = $_POST['Product'];
     $Prices = $_POST['Prices'];
+    $Catagory=$_POST["Catagory"];
     // $iamges=$_POST['image'];
    
 
