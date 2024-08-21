@@ -64,7 +64,6 @@
             tableBody.appendChild(row);
           });
 
-          // Add event listeners for delete buttons
           document.querySelectorAll('.delete-button').forEach(button => {
             button.addEventListener('click', function() {
               const userId = this.getAttribute('data-id');
