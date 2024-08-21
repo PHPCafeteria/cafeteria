@@ -17,8 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             require('DB.php');
 
             $conn = new ConnectionDB;
-            $conn->Connection(); // echo shall be removed
-            $sql = 'select orders.* from orders, user where user.id = ? and orders.date between ? and ?';
+            $conn->Connection(); 
+            $sql = 'select orders.* from orders, user where user.id = ? and orders.date between ? and ? and orders.action = 0';
             $statement = $conn->db->prepare($sql);
             $statement->execute([$userId, $_GET['startDate'], $_GET['endDate']]);
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -26,10 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             foreach ($result as $r) {
                 array_push($arr, $r);
             }
-            // echo '<br>'; // shall be removed
-            // var_dump($result);
             echo json_encode($arr);
-
         } else {
             return 'Pick valid dates, please.';
         }

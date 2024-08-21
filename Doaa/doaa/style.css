@@ -1,0 +1,36 @@
+.navbar{
+    background-color:#74512D;
+    height: 60px;
+}
+
+.picker{
+    background-color: #F8F4E1;
+}
+
+body{
+    background-image: url("/background4.jpg");
+    background-repeat: repeat-y;
+    background-size:140%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+#startDate{
+    color: #74512D;
+}
+
+.sbody{
+    background-color: #F8F4E1;
+}
+
+.card {
+    background-color: #F8F4E1;
+    }
+    
+button{
+        background-color: #74512D;
+        color:white;
+        font-weight: bolder;
+        border: none;
+        border-radius: 3%;
+    }

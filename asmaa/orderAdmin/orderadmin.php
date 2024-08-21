@@ -26,8 +26,20 @@
                         <a class="nav-link active text-white fs-6" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white fs-6" href="#">My Orders</a>
-                    </li>
+            <a class="nav-link text-white fs-6 " href="#">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fs-6" href="#">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fs-6 " href="#">Manual Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fs-6 " href="#">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fs-6" href="#">Checks</a>
+          </li>
                 </ul>
                 
                 <!-- Profile section moved inside the collapsible area -->

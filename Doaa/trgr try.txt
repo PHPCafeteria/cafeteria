@@ -1,0 +1,34 @@
+(((-->mysql<---)))
+
+create table track_cancelled_orders( 
+       idOrder int auto_increment primary key, 
+       date timestamp default current_timestamp,
+       notes varchar(200),
+       status varchar(50) default 'Processing',
+       totalPrice int default 0,
+       action int default 1
+       );
+
+*********************************************************************
+(((-->create trigger in /tmp/functions.sql<---)))
+
+delimiter $
+
+create TRIGGER trg_order_cancelled
+after update on orders
+for each row
+begin
+IF OLD.action != NEW.action and NEW.action = 1 then
+ insert into track_cancelled_orders(notes, price)
+ values (OLD.notes, OLD.totalPrice);
+end if;
+end $
+
+delimiter ;
+
+*********************************************************************
+
+(((-->mysql<---)))
+source /tmp/functions.sql;
+
+
