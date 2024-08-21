@@ -1,16 +1,40 @@
 body {
     font-family: Arial, sans-serif;
-    background-color:khaki;
-    display: flex;
+    background-color:burlywood;
+    /* display: flex; */
     justify-content: center;
-    align-items: left;
-    height: 80%;
-    margin: 10px;
-    background: url("./photo/hotel-lobby.jpg");
+    align-items: center;
+    height: 100vh;
+    margin: 10;
+    background: url("./photo/Cafeteria15L-1.jpg");
     background-size: cover;
-
+    /* background: linear-gradient(to top, red, orange, yellow, green, blue, indigo, violet); */
+}
+div.scrollmenu {
+  /* background-color */
+  overflow: auto;
+  white-space: normal;
 
 }
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+
+}
+
+div.scrollmenu a:hover {
+  background-color: #777;
+}
+span{
+    float: right;
+    text-align: center;
+}
+
 .form-container {
     background-color:khaki;
     padding: 20px;
@@ -65,6 +89,6 @@ ul {
     padding: 8px;
     background-color: #dddddd;
   }
-  div{
+  /* div{
     display: inline-block;
-  }
+  } */

@@ -16,6 +16,29 @@ class User {
         $this->picture = $picture;
     }
 
+<<<<<<< HEAD
+        public function update($id){
+            $n = new ConnectionDB;
+            echo $n->Connection();
+            $sql = 'update user set name=?, email=?, password=?,roomNo=? where id = ?';
+            $stataus = $n->db->prepare($sql);
+            $stataus->execute();
+            // $result = $stataus->fetchAll(PDO::FETCH_ASSOC);
+            echo '<br>';
+            //print_r($result);
+        }
+
+        public function delete($id){
+            $n = new ConnectionDB;
+            echo $n->Connection();
+            $sql = 'delete from user where id = ?';
+            $stataus = $n->db->prepare($sql);
+            $stataus->execute([$id]);
+            // $result = $stataus->fetchAll(PDO::FETCH_ASSOC);
+            echo '<br>';
+            //print_r($result);
+        }
+=======
     public function insert() {
         $n = new ConnectionDB;
         echo $n->Connection();
@@ -35,6 +58,7 @@ class User {
         echo '<br>';
         print_r($status->fetchAll(PDO::FETCH_ASSOC));
     }
+>>>>>>> b61e7b9b7c980b4dd670c421ba42e7236b8e8efa
 
     public function delete($id) {
         $n = new ConnectionDB;
@@ -48,6 +72,15 @@ class User {
         } else {
             http_response_code(500);
             echo json_encode(['error' => 'Failed to delete user']);
+        }
+
+        public function fetchUserById($id) {
+            $t = new ConnectionDB;
+            $t->Connection();
+            $sql = 'SELECT name, picture FROM user WHERE id = ?';
+            $stmt = $t->db->prepare($sql);
+            $stmt->execute([$id]);
+            return $stmt->fetch(PDO::FETCH_ASSOC);
         }
     }
 
