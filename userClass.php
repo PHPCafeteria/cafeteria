@@ -16,6 +16,7 @@ class User {
         $this->picture = $picture;
     }
 
+
     public function insert() {
         $n = new ConnectionDB;
         echo $n->Connection();
@@ -26,15 +27,7 @@ class User {
         print_r($status->fetchAll(PDO::FETCH_ASSOC));
     }
 
-    public function update($id) {
-        $n = new ConnectionDB;
-        echo $n->Connection();
-        $sql = 'UPDATE user SET name=?, email=?, password=?, roomNo=? WHERE id=?';
-        $status = $n->db->prepare($sql);
-        $status->execute([$this->name, $this->email, $this->password, $this->roomNo, $id]);
-        echo '<br>';
-        print_r($status->fetchAll(PDO::FETCH_ASSOC));
-    }
+ 
 
     public function delete($id) {
         $n = new ConnectionDB;
@@ -50,6 +43,7 @@ class User {
             echo json_encode(['error' => 'Failed to delete user']);
         }
     }
+       
 
     public function fetchUsers() {
         $t = new ConnectionDB;

@@ -15,18 +15,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve product details from the form
     $Product = $_POST['Product'];
     $Prices = $_POST['Prices'];
+    // $iamges=$_POST['image'];
+   
 
-    // Handle image upload
-    if (isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK) {
-        $upload_dir = __DIR__ . '/../image/product/'; // Correct path to the 'product' directory
 
-        // Check if the directory exists; if not, create it
-        if (!is_dir($upload_dir)) {
-            if (!mkdir($upload_dir, 0755, true)) {
-                die("<h1 style='color: red;'>Failed to create upload directory.</h1>");
-            }
-        }
 
+
+    if (isset($_FILES['image'])) {
+        $upload_dir = 'upload/';
         $uploaded_file = $upload_dir . basename($_FILES['image']['name']);
         
         // Attempt to move the uploaded file

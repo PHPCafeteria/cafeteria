@@ -1,0 +1,26 @@
+<!--<body>
+    <header></header>
+    <main>
+        <h1>Checks</h1>
+        <section id="pickers">
+            <label for="from-date">From: </label>
+            <input type="datetime-local" id="from-date" name="from-date">
+            <label for="to-date">To: </label>
+            <input type="datetime-local" id="to-date" name="to-date">
+            <br><br>
+            <label for="user-picker">Select user: </label>
+            <select name="user-picker" id="user-picker">
+                <option value="admin" selected>Admin</option>
+            </select>
+        </section>
+        <section id="user-card"></section>
+        <section id="table-container">
+            <table id="users-table"></table>
+            <table id="orders-table"></table>
+        </section>
+        <section id="display-section"></section>
+    </main>
+    <footer></footer>
+    <script src="checks.js"></script>
+</body> -->
+

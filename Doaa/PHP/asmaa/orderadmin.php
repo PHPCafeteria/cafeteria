@@ -11,21 +11,20 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="php project/cafeteria-logo.png" alt="cafeteria" width="50" height="40">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active text-white fs-6" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="php project/cafeteria-logo.png" alt="cafeteria" width="50" height="45">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item   ">
+            <a class="nav-link active text-white fs-6 " aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link text-white fs-6 " href="#">Products</a>
           </li>
           <li class="nav-item">
@@ -40,22 +39,19 @@
           <li class="nav-item">
             <a class="nav-link text-white fs-6" href="#">Checks</a>
           </li>
-                </ul>
-                
-                <!-- Profile section moved inside the collapsible area -->
-                <div class="d-flex align-items-center mt-3 mt-lg-0">
-                    <div class="px-3">
-                        <img class="rounded-circle border-2 border-black" src="php project/cofee.png"
-                            alt="Profile Picture" style="width: 50px; height: 50px;">
-                    </div>
-                    <div>
-                        <a class="nav-link text-white fs-6" href="#">username</a>
-                    </div>
-                </div>
-            </div>
+        </ul>
+      </div>
+      <!--add pic php-->
+      <div class="text-align-end d-flex">
+        <div class="px-3">
+          <img class="rounded-circle border-2 border-black" src="php project/cofee.png" alt="Profile Picture" style="width: 50px; height: 50px;">
         </div>
-    </nav>
-
+        <div>
+          <a class="nav-link text-white fs-6 pt-3" href="#">Admin</a>
+        </div>
+      </div>
+    </div>
+  </nav>
   <!---->
   <div class="container mt-5 d-flex justify-content-between">
     <div>
