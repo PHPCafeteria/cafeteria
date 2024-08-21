@@ -35,7 +35,7 @@
             $stataus->execute();
             // $result = $stataus->fetchAll(PDO::FETCH_ASSOC);
             echo '<br>';
-            print_r($result);
+            //print_r($result);
         }
 
         public function delete($id){
@@ -46,7 +46,7 @@
             $stataus->execute([$id]);
             // $result = $stataus->fetchAll(PDO::FETCH_ASSOC);
             echo '<br>';
-            print_r($result);
+            //print_r($result);
         }
 
 
@@ -57,6 +57,15 @@
             $stmt = $t->db->prepare($sql);
             $stmt->execute();
             return json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+        }
+
+        public function fetchUserById($id) {
+            $t = new ConnectionDB;
+            $t->Connection();
+            $sql = 'SELECT name, picture FROM user WHERE id = ?';
+            $stmt = $t->db->prepare($sql);
+            $stmt->execute([$id]);
+            return $stmt->fetch(PDO::FETCH_ASSOC);
         }
     }
 ?>
