@@ -76,7 +76,7 @@ $(document).on("click", ".addBtn, .removeBtn", function() {
             let numPri = numP * price;
             num2.text(numPri);
             $(".totalPrice").text(`Total: $ ${sum}`);
-            let x = order.products.filter(products => products.name === id);
+            let x = order.products.filter(products => products.name == id);
             x[0].num++;
             console.log(x[0]);
         } else {
@@ -102,9 +102,9 @@ $(document).on("click", ".addBtn, .removeBtn", function() {
         let num2 = $(`.tt`).find(`#${idx}`);
         let num4 = $(`.tt`).find(`#${idx}1`);
         if (num2.length > 0) {
-            let x = order.products.filter(products => products.name === name);
+            let x = order.products.filter(products => products.name == id);
             x[0].num--;
-            console.log(x[0]);
+            // console.log(x[0]);
             if(x[0].num == 0){
                 console.log(11111);
                 order.products = order.products.filter(products => products.name !== name);

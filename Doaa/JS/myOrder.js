@@ -1,5 +1,5 @@
 // Get data from DB
-let userId = 2;
+let userId = 3;
 async function getDataFromDB() {
     const startDate = document.getElementById('from-date').value;
     const endDate = document.getElementById('to-date').value;

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="all.min.css">
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/my-orders.css">
+    <script src="JS/jquery-3.7.1.js"></script>
 </head>
 
 <body>
@@ -23,10 +25,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item   ">
-                        <a class="nav-link active text-white fs-6 " aria-current="page" href="#">Home</a>
+                        <a class="nav-link active text-white fs-6 " aria-current="page" href="../asmaa/orderUser/orderUser.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white fs-6" href="#">My Orders</a>
+                        <a class="nav-link text-white fs-6" href="cafeteria/Doaa/my-orders.php">My Orders</a>
                     </li>
                 </ul>
             </div>
@@ -44,6 +46,6 @@
         </div>
     </nav>
     <script src="bootstrap.bundle.min.js"></script>
-</body>
+<!-- </body>
 
-</html>
+</html> -->

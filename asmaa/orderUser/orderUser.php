@@ -24,10 +24,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active text-white fs-6" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active text-white fs-6" aria-current="page" href="orderUser.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white fs-6" href="#">My Orders</a>
+                        <a class="nav-link text-white fs-6" href="../../Doaa/my-orders.php">My Orders</a>
                     </li>
                 </ul>
                 
@@ -125,7 +125,7 @@
         </div>
     </footer>
     <script src="bootstrap.bundle.min.js"></script>
-    <script src="adminOrder.js"></script>
+    <script src="userOrder.js"></script>
 </body>
 
 </html>

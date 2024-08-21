@@ -9,7 +9,7 @@ ini_set('display_errors', '1');
 class ConnectionDB {
     private $DB_HOST = 'localhost';
     private $DB_USER = 'root';
-    private $DB_PASSWORD = 'D@vid11233455';
+    private $DB_PASSWORD = '405060';
     private $DB_DATABASE = 'cafeteria';
     private $typeSQL = 'mysql';
 

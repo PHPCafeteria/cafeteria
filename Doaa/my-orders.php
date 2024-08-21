@@ -1,13 +1,16 @@
-<!DOCTYPE html>
+<?php
+include('/var/www/html/cafeteria/asmaa/header/headerForUser.php')
+?>
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Orders</title>
-    <link rel="stylesheet" href="CSS/my-orders.css">
-    <script src="JS/jquery-3.7.1.js"></script>
+   
 </head>
-<body>
+<body> -->
     <header></header>
     <main>
         <h1>My Orders</h1>

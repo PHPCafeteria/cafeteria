@@ -10,6 +10,9 @@
     <script src="jquery-3.7.1.js"></script>
 </head>
 <body>
+    <?php
+        include("../asmaa/header/headerForAdmin.php")
+    ?>
     <h1 style="margin-left: 10%; font-size: 50px;">Orders</h1>
     <div class="container" id="container_">
     </div>

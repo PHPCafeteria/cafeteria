@@ -1,39 +1,3 @@
-<!-- <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checks</title>
-    <link rel="stylesheet" href="CSS/checks.css">
-</head>
-
-<body>
-    <header></header>
-    <main>
-        <h1>Checks</h1>
-        <section id="pickers">
-            <label for="from-date">From: </label>
-            <input type="datetime-local" id="from-date" name="from-date">
-            <label for="to-date">To: </label>
-            <input type="datetime-local" id="to-date" name="to-date">
-            <br><br>
-            <label for="user-picker">Select user: </label>
-            <select name="user-picker" id="user-picker">
-                <option value="admin" selected>Admin</option>
-            </select>
-        </section>
-        <section id="user-card"></section>
-        <section id="table-container">
-            <table id="users-table"></table>
-            <table id="orders-table"></table>
-        </section>
-        <section id="display-section"></section>
-    </main>
-    <footer></footer>
-    <script src="checks.js"></script>
-</body>
-
-</html> -->
 
 <!doctype html>
 <html lang="en">
@@ -49,7 +13,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
+    <!-- <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="php project/cafeteria-logo.png" alt="cafeteria" width="50" height="40">
@@ -78,8 +42,10 @@
                     <li class="nav-item">
                         <a class="nav-link text-white fs-6" href="#">Checks</a>
                     </li>
-                </ul>
-
+                </ul> -->
+                <?php
+                  include("../asmaa/header/headerForAdmin.php")
+                ?>
                 <!-- Profile section moved inside the collapsible area -->
                 <div class="d-flex align-items-center mt-3 mt-lg-0">
                     <div class="px-3">

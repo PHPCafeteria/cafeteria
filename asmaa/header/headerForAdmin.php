@@ -22,19 +22,19 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active text-white fs-6" aria-current="page" href="../david/all_products_basic.html">Home</a>
+            <a class="nav-link active text-white fs-6" aria-current="page" href="http://localhost/cafeteria/gad/allOrder.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white fs-6" href="../david/all_products_basic.html">Products</a>
+            <a class="nav-link text-white fs-6" href="http://localhost/cafeteria/david/all_products_basic.php">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white fs-6" href="../david/all-users.html">Users</a>
+            <a class="nav-link text-white fs-6" href="http://localhost/cafeteria/david/all-users.php">Users</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white fs-6" href="#">Manual Order</a>
+            <a class="nav-link text-white fs-6" href="http://localhost/cafeteria/asmaa/orderAdmin/orderadmin.php">Manual Order</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white fs-6" href="#">Checks</a>
+            <a class="nav-link text-white fs-6" href="http://localhost/cafeteria/Doaa/checks.php">Checks</a>
           </li>
         </ul>
       </div>

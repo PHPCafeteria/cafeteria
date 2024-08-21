@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
+    <!-- <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="php project/cafeteria-logo.png" alt="cafeteria" width="50" height="40">
@@ -41,8 +41,10 @@
           <li class="nav-item">
             <a class="nav-link text-white fs-6" href="#">Checks</a>
           </li>
-                </ul>
-                
+                </ul> -->
+                <?php
+                  include("../header/headerForAdmin.php")
+                ?>
                 <!-- Profile section moved inside the collapsible area -->
                 <div class="d-flex align-items-center mt-3 mt-lg-0">
                     <div class="px-3">
