@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="bootstrap.min.css">
   <link rel="stylesheet" href="all.min.css">
   <link rel="stylesheet" href="style.css">
+  <script src="jquery-3.7.1.js"></script>
 </head>
 
 <body>
@@ -80,205 +81,46 @@
             <div class="container">
               <p class="my-5" style="font-size: 30px;">Thank for your purchase</p>
               <div class="row">
-                <ul class="list-unstyled">
-                  <li class="text-black">Username</li>
-                  <li class="text-muted mt-1"><span class="text-black">Invoice</span> #12345</li>
-                  <li class="text-black mt-1">April 17 2021</li>
-                </ul>
-                <hr>
-                <div class="col-xl-10">
-                  <p class="product">Product1</p>
-                </div>
-                <div class="col-xl-2">
-                  <p class="float-end price">$price
-                  </p>
-                </div>
-                <hr>
-              </div>
-              <div class="row">
-                <div class="col-xl-10">
-                  <p>Product 2</p>
-                </div>
-                <div class="col-xl-2">
-                  <p class="float-end">$price
-                  </p>
-                </div>
-                <hr>
-              </div>
-              <div class="row">
-                <div class="col-xl-10">
-                  <p>Product 3</p>
-                </div>
-                <div class="col-xl-2">
-                  <p class="float-end">$price
-                  </p>
-                </div>
-                <hr style="border: 2px solid black;">
-              </div>
-              <div class="row text-black">
-                <label for="notes">
-                  Notes
-                </label>
-                <textarea name="notes" id="notes"></textarea>
-                <hr style="border: 2px solid black;">
-              </div>
-              <div class="row text-black">
-                <label for="room">Room</label><br>
-                <select name="room" id="roomNum" style="background-color: white;">
-                  <option value="option1">option1</option>
-                  <option value="option2">option2</option>
-                </select>
-              </div>
-              <br>
-              <div class="row text-black">
-                <div class="col-xl-12">
-                  <p class="float-end fw-bold">Total: $10.00
-                  </p>
-                </div>
-              </div>
-              <button type="button" style="border-radius: 10%;">Confirm</button>
+                            <ul class="list-unstyled">
+                                    <li class="text-black userName">Dived</li>
+                                    <li class="text-muted mt-1"><span class="text-black">Invoice</span> #12345</li>
+                                    <li class="text-black mt-1 date_"></li>
+                                </ul>
+                                <div class="requests">
+                                </div>
+                                <hr style="border: 2px solid black;">
+                            </div>
+                            <div class="row text-black">
+                                <label for="notes">
+                                    Notes
+                                </label>
+                                <textarea name="notes" id="notes" class="note"></textarea>
+                                <hr style="border: 2px solid black;">
+                            </div>
+                            <div class="row text-black">
+                                <label for="room">Room</label><br>
+                                <select name="room" id="roomNum" style="background-color: white;">
+                                    <option value="1001">1001</option>
+                                    <option value="1002">1002</option>
+                                    <option value="2001">2001</option>
+                                    <option value="2002">2002</option>
+                                </select>
+                            </div>
+                            <br>
+                            <div class="row text-black">
+                                <div class="col-xl-12">
+                                    <p class="float-end fw-bold totalPrice"> Total: $0
+                                    </p>
+                                </div>
+                            </div>
+                            <button type="button" style="border-radius: 10%;" class="confirm">Confirm</button>
+
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-12 col-lg-8">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
-            <div class="card h-100 d-flex justify-content-center align-items-center">
-              <div class="card-body">
-                <div style="text-align: center;">
-                  <img src="php project/tea.png" class="card-img-top" style=" width: 90px; height: 90px;object-fit: contain;" alt="...">
-                </div>
-                <h5 class="card-title text-center">Tea</h5>
-                <p class="card-text text-center">$5</p>
-                <div class="d-flex justify-content-evenly">
-                  <button type="button" class="addBtn btn" style="background-color: #74512D; color:white;font-weight: bolder;">+</button>
-                  <button type="button" class="removeBtn btn" style="background-color: #74512D; color:white; font-weight: bolder;"><span class="px-1">-</span></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 d-flex justify-content-center align-items-center">
-              <div class="card-body">
-                <div style="text-align: center;">
-                  <img src="php project/gree_tea.png" class="card-img-top" style=" width: 90px; height: 90px;object-fit: contain;" alt="...">
-                </div>
-                <h5 class="card-title text-center">Green Tea</h5>
-                <p class="card-text text-center">$7</p>
-                <div class="d-flex justify-content-evenly">
-                  <button type="button" class="addBtn btn" style="background-color: #74512D; color:white;font-weight: bolder;">+</button>
-                  <button type="button" class="removeBtn btn" style="background-color: #74512D; color:white; font-weight: bolder;"><span class="px-1">-</span></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 d-flex justify-content-center align-items-center">
-              <div class="card-body">
-                <div style="text-align: center;">
-                  <img src="php project/cofee.png" class="card-img-top" style=" width: 90px; height: 90px;object-fit: contain;" alt="...">
-                </div>
-                <h5 class="card-title text-center">coffee</h5>
-                <p class="card-text text-center">$6</p>
-                <div class="d-flex justify-content-evenly">
-                  <button type="button" class="addBtn btn" style="background-color: #74512D; color:white;font-weight: bolder;">+</button>
-                  <button type="button" class="removeBtn btn" style="background-color: #74512D; color:white; font-weight: bolder;"><span class="px-1">-</span></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 d-flex justify-content-center align-items-center">
-              <div class="card-body">
-                <div style="text-align: center;">
-                  <img src="php project/0131-nescafe.png" class="card-img-top" style=" width: 90px; height: 90px;object-fit: contain;" alt="...">
-                </div>
-                <h5 class="card-title text-center">Nescafe</h5>
-                <p class="card-text text-center"> $8 </p>
-                <div class="d-flex justify-content-evenly">
-                  <button type="button" class="addBtn btn" style="background-color: #74512D; color:white;font-weight: bolder;">+</button>
-                  <button type="button" class="removeBtn btn" style="background-color: #74512D; color:white; font-weight: bolder;"><span class="px-1">-</span></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 d-flex justify-content-center align-items-center">
-              <div class="card-body">
-                <div style="text-align: center;">
-                  <img src="php project/ice tea.png" class="card-img-top" style=" width: 90px; height: 90px;object-fit: contain;" alt="...">
-                </div>
-                <h5 class="card-title text-center">Ice Tea</h5>
-                <p class="card-text text-center">$10</p>
-                <div class="d-flex justify-content-evenly">
-                  <button type="button" class="addBtn btn" style="background-color: #74512D; color:white;font-weight: bolder;">+</button>
-                  <button type="button" class="removeBtn btn" style="background-color: #74512D; color:white; font-weight: bolder;"><span class="px-1">-</span></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 d-flex justify-content-center align-items-center">
-              <div class="card-body">
-                <div style="text-align: center;">
-                  <img src="php project/iced-coffee.png" class="card-img-top" style=" width: 90px; height: 90px;object-fit: contain;" alt="...">
-                </div>
-                <h5 class="card-title text-center">Ice Coffee</h5>
-                <p class="card-text text-center">$10</p>
-                <div class="d-flex justify-content-evenly">
-                  <button type="button" class="addBtn btn" style="background-color: #74512D; color:white;font-weight: bolder;">+</button>
-                  <button type="button" class="removeBtn btn" style="background-color: #74512D; color:white; font-weight: bolder;"><span class="px-1">-</span></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 d-flex justify-content-center align-items-center">
-              <div class="card-body">
-                <div style="text-align: center;">
-                  <img src="php project/mangooo.png" class="card-img-top" style=" width: 90px; height: 90px;object-fit: contain;" alt="...">
-                </div>
-                <h5 class="card-title text-center">Mango juice</h5>
-                <p class="card-text text-center">$6</p>
-                <div class="d-flex justify-content-evenly">
-                  <button type="button" class="addBtn btn" style="background-color: #74512D; color:white;font-weight: bolder;">+</button>
-                  <button type="button" class="removeBtn btn" style="background-color: #74512D; color:white; font-weight: bolder;"><span class="px-1">-</span></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 d-flex justify-content-center align-items-center">
-              <div class="card-body">
-                <div style="text-align: center;">
-                  <img src="php project/strowberryy.png" class="card-img-top ms-3" style=" width: 90px; height: 90px;object-fit: contain;" alt="...">
-                </div>
-                <h5 class="card-title">strawberry Juice</h5>
-                <p class="card-text text-center">$8</p>
-                <div class="d-flex justify-content-evenly">
-                  <button type="button" class="addBtn btn" style="background-color: #74512D; color:white;font-weight: bolder;">+</button>
-                  <button type="button" class="removeBtn btn" style="background-color: #74512D; color:white; font-weight: bolder;"><span class="px-1">-</span></button>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 d-flex justify-content-center align-items-center">
-              <div class="card-body">
-                <div style="text-align: center;">
-                  <img src="php project/soda.png" class="card-img-top" style=" width: 90px; height: 90px;object-fit: contain;" alt="...">
-                </div>
-                <h5 class="card-title text-center">Soda can</h5>
-                <p class="card-text text-center">$5</p>
-                <div class="d-flex justify-content-evenly">
-                  <button type="button" class="addBtn btn" style="background-color: #74512D; color:white;font-weight: bolder;">+</button>
-                  <button type="button" class="removeBtn btn" style="background-color: #74512D; color:white; font-weight: bolder;"><span class="px-1">-</span></button>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4 addProduct">
         </div>
       </div>
     </div>
@@ -289,6 +131,7 @@
     </div>
   </footer>
   <script src="bootstrap.bundle.min.js"></script>
+  <script src="adminOrder.js"></script>
 </body>
 
 </html>
