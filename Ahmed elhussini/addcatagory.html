@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    select{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    }
+</style>
+<script>
+var subjectObject = {
+  "hot": {
+    "Espresso": ["Granulated Sugar", "Brown Sugar", "Fruit Sugar", "Powdered Sugar","Raw Sugar ","Artificial Sweeteners","Stevia","Honey"],
+    "Americano": ["Granulated Sugar", "Brown Sugar", "Fruit Sugar", "Powdered Sugar","Raw Sugar ","Artificial Sweeteners","Stevia","Honey"],
+    "Cappuccino": ["Granulated Sugar", "Brown Sugar", "Fruit Sugar", "Powdered Sugar","Raw Sugar ","Artificial Sweeteners","Stevia","Honey"] ,
+    "Latte": ["Granulated Sugar", "Brown Sugar", "Fruit Sugar", "Powdered Sugar","Raw Sugar ","Artificial Sweeteners","Stevia","Honey"]  ,
+    "Mocha": ["Granulated Sugar", "Brown Sugar", "Fruit Sugar", "Powdered Sugar","Raw Sugar ","Artificial Sweeteners","Stevia","Honey"]  , 
+    "Macchiato": ["Granulated Sugar", "Brown Sugar", "Fruit Sugar", "Powdered Sugar","Raw Sugar ","Artificial Sweeteners","Stevia","Honey"]  , 
+    "Flat White": ["Granulated Sugar", "Brown Sugar", "Fruit Sugar", "Powdered Sugar","Raw Sugar ","Artificial Sweeteners","Stevia","Honey"]  , 
+  },
+
+
+
+
+  "ice": {
+    "Iced Coffee": ["Granulated Sugar", "Brown Sugar", "Fruit Sugar", "Powdered Sugar","Raw Sugar ","Artificial Sweeteners","Stevia","Honey"],
+    "Iced Latte": ["Granulated Sugar", "Brown Sugar", "Fruit Sugar", "Powdered Sugar","Raw Sugar ","Artificial Sweeteners","Stevia","Honey"],
+    "Iced Cappuccino": ["Granulated Sugar", "Brown Sugar", "Fruit Sugar", "Powdered Sugar","Raw Sugar ","Artificial Sweeteners","Stevia","Honey"],
+    "Iced Mocha": ["Granulated Sugar", "Brown Sugar", "Fruit Sugar", "Powdered Sugar","Raw Sugar ","Artificial Sweeteners","Stevia","Honey"],
+  },
+  "tea": {
+    " Hot Chocolate": ["Granulated Sugar", "Brown Sugar", "Fruit Sugar", "Powdered Sugar","Raw Sugar ","Artificial Sweeteners","Stevia","Honey"],
+    "Matcha": ["Granulated Sugar", "Brown Sugar", "Fruit Sugar", "Powdered Sugar","Raw Sugar ","Artificial Sweeteners","Stevia","Honey"],
+    "IChai Latte": ["Granulated Sugar", "Brown Sugar", "Fruit Sugar", "Powdered Sugar","Raw Sugar ","Artificial Sweeteners","Stevia","Honey"],
+  }
+
+}
+window.onload = function() {
+  var subjectSel = document.getElementById("catagory");
+  var topicSel = document.getElementById("topic");
+  var chapterSel = document.getElementById("chapter");
+  for (var x in subjectObject) {
+    subjectSel.options[subjectSel.options.length] = new Option(x, x);
+  }
+  subjectSel.onchange = function() {
+ //empty Chapters- and Topics- dropdowns
+ chapterSel.length = 1;
+ topicSel.length = 1;
+    //display correct values
+    for (var y in subjectObject[this.value]) {
+      topicSel.options[topicSel.options.length] = new Option(y, y);
+    }
+  }
+  topicSel.onchange = function() {
+ //empty Chapters dropdown
+ chapterSel.length = 1;
+    //display correct values
+    var z = subjectObject[subjectSel.value][this.value];
+    for (var i = 0; i < z.length; i++) {
+      chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+    }
+  }
+}
+</script>
+</head>   
+<body>
+
+<h1> Add catagory</h1>
+
+<form name="form1" id="form1">
+    catagory: <select name="subject" id="catagory">
+    <option value="" selected="selected">Select subject</option>
+  </select>
+  <br><br>
+Topics: <select name="topic" id="topic">
+    <option value="" selected="selected">Please select subject first</option>
+  </select>
+  <br><br>
+Chapters: <select name="chapter" id="chapter">
+    <option value="" selected="selected">Please select topic first</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Add catagory">  
+</form>
+
+</body>
+</html>
