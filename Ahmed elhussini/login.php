@@ -16,11 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute([$Email]);
         $user = $stmt->fetch();
         if($Email == "admin@gmail.com" && $password=='admin'){
-            header("Location: ../gad/allOrders.php");
+            header("Location: http://localhost/cafeteria/gad/allOrder.php");
         }else{
             if ($user && $user['password'] === $password) {  
                 $_SESSION['Email'] = $Email;
-                header("Location: welcome.html");  
+                header("Location: http://localhost/cafeteria/asmaa/orderUser/orderUser.php");  
                 exit();
             } else {
                 echo("<h1 style='color:red;'>Error: Incorrect email or password!</h1>");
