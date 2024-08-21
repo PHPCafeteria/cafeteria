@@ -1,3 +1,4 @@
+<?php include '../asmaa/header/headerForAdmin.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,25 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User List</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .user-image {
+      width: 50px; /* Adjust the size as needed */
+      height: auto;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Users</a></li>
-        <li><a href="#">Manual Order</a></li>
-        <li><a href="#">Checks</a></li>
-        <li><a href="#">Admin</a></li>
-      </ul>
-    </nav>
-  </header>
-
   <main>
     <div class="header-container">
       <h1>All Users</h1>
-      <button class="add-button">Add User</button>
+      <a href="../Ahmed elhussini/adduser.php"><button class="add-button">Add User</button></a>
     </div>
 
     <table id="userTable">
@@ -54,8 +48,8 @@
             row.innerHTML = `
               <td>${user.name}</td>
               <td>${user.roomNo}</td>
-              <td><img src="${user.picture}" alt="${user.name}" width="50"></td>
-              <td>EXT Placeholder</td> <!-- Replace with actual data if available -->
+              <td><img src="../image/user/${user.picture}" alt="${user.name}" class="user-image"></td>
+              <td>${user.ext}</td>
               <td>
                 <button class="edit-button">Edit</button>
                 <button class="delete-button" data-id="${user.id}">Delete</button>

@@ -1,3 +1,4 @@
+<?php include '../asmaa/header/headerForAdmin.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,25 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product List</title>
   <link rel="stylesheet" href="./styles.css"> <!-- Link to external CSS file -->
+  <style>
+    .product-image {
+      width: 100px; /* Adjust the size as needed */
+      height: auto;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Users</a></li>
-        <li><a href="#">Manual Order</a></li>
-        <li><a href="#">Checks</a></li>
-        <li><a href="#">Admin</a></li>
-      </ul>
-    </nav>
-  </header>
-
   <main>
     <div class="header-container">
       <h1>All Products</h1>
-      <button class="add-button">Add Product</button>
+      <a href="../Ahmed elhussini/addproduct.php"><button class="add-button">Add Product</button></a>
     </div>
 
     <table id="productTable">
@@ -54,7 +48,7 @@
               row.innerHTML = `
                 <td>${product.name}</td>
                 <td>${product.price} EGP</td>
-                <td><img src="${product.picture}" alt="${product.name} image" class="product-image"></td>
+                <td><img src="../image/product/${product.picture}" alt="${product.name} image" class="product-image"></td>
                 <td>
                   <button class="edit-button">Edit</button>
                   <button class="delete-button" data-id="${product.idProduct}">Delete</button>
@@ -76,7 +70,6 @@
                 .then(response => response.json())
                 .then(result => {
                   if (result.status === 'success') {
-                    // Remove the product row from the table
                     this.closest('tr').remove();
                   } else {
                     console.error('Failed to delete product:', result.error);
@@ -89,7 +82,6 @@
           .catch(error => console.error('Error:', error));
       }
 
-      // Initial fetch to populate products
       fetchProducts();
     });
   </script>
