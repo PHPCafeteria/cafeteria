@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product List</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="./styles.css"> <!-- Link to external CSS file -->
 </head>
 <body>
   <header>
@@ -63,7 +63,6 @@
               tableBody.appendChild(row);
             });
 
-            // Add event listeners for delete buttons
             document.querySelectorAll('.delete-button').forEach(button => {
               button.addEventListener('click', function() {
                 const productId = this.getAttribute('data-id');
