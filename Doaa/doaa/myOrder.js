@@ -1,5 +1,4 @@
 // Get data from DB
-
 let userId = 2;
 async function getDataFromDB() {
     const startDate = document.getElementById('from-date').value;
@@ -13,14 +12,9 @@ async function getDataFromDB() {
     convertedStartDate = dateConverter(startDate);
     convertedEndDate = dateConverter(endDate);
 
-    //////// depends on DB ////////
     try {
-
-        let url = `/cafeteria/Doaa/PHP/my_orders.php?userId=${userId}&startDate=${convertedStartDate}&endDate=${convertedEndDate}`
-        let data = await fetch(url);
-
+        let data = await fetch(`/cafeteria/Doaa/PHP/user_orders.php?userId=${userId}&startDate=${convertedStartDate}&endDate=${convertedEndDate}`);
         let userOrders = await data.json();
-        // console.log(userOrders);
         displayResults(userOrders);
     }
     catch (e) {
@@ -44,7 +38,7 @@ function displayResults(userOrders) {
         //1st td
         let orderDateControl = document.createElement("td");
         let orderDate = document.createElement("span");
-        orderDate.textContent = userOrder.date;                   
+        orderDate.textContent = userOrder.date;
         orderDateControl.appendChild(orderDate);
 
         let button = document.createElement("button");
@@ -54,15 +48,20 @@ function displayResults(userOrders) {
 
         //2nd td
         let status = document.createElement("td");
-        status.textContent = userOrder.status;               
+        status.textContent = userOrder.status;
 
         //3rd td
         let amount = document.createElement("td");
-        amount.textContent = userOrder.totalPrice;                       
+        amount.textContent = userOrder.totalPrice;
 
         //4th td if there is any
         let action = document.createElement("td");
-        action.textContent = !userOrder.action ? 'cancelled' : '';
+        if (userOrder.status === 'Processing') {
+            let cancelButton = document.createElement("button");
+            cancelButton.textContent = "Cancel";
+            action.appendChild(cancelButton);
+            cancelButton.addEventListener("click", () => cancelOrder(userOrder.idOrder));
+        }
 
         // Append table data children to their parent row
         tableRow.appendChild(orderDateControl);
@@ -75,6 +74,17 @@ function displayResults(userOrders) {
     });
 }
 
+// Handle cancel button clicking
+async function cancelOrder(orderId) {
+    try {
+        let response = await fetch(`/cafeteria/Doaa/PHP/cancel_order.php?userId=${userId}&orderId=${orderId}`);
+        let result = await response.json();
+        alert(result);
+    } catch (e) {
+        console.log("Error in getting response: ", e);
+    }
+}
+
 // Control order details display
 const container = document.getElementById("display-section");
 async function controlOrderDisplay(button, orderId) {
@@ -85,7 +95,6 @@ async function controlOrderDisplay(button, orderId) {
         container.innerHTML = ""; // Empty previous shown order
 
         try {
-            //////// depends on DB ////////
             let orderDetails = await fetch(`/cafeteria/Doaa/PHP/order_details.php?orderId=${orderId}`);
             let orderItems = await orderDetails.json();
             displayOrder(orderItems);

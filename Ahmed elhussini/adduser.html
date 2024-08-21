@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./styleAddUser.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+      crossorigin="anonymous">
+      
+<style>
+    form i {
+        margin-left: -30px;
+        cursor: pointer;
+    }
+   
+    .error-message {
+        color: red;
+        font-size: 0.875em;
+        display: none; /* Hide by default */
+    }
+    .strength-text {
+        font-size: 0.875em;
+        margin-top: 5px;
+    }
+    .power-container {
+    background-color: #2E424D;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+}
+.power-container #power-point {
+    background-color: #D73F40;
+    width: 1%;
+    height: 100%;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+</style>
+</head>
+<body>
+
+<div class="scrollmenu">
+    
+  <a href="#home" class="btn btn-info">Home</a>
+  <a href="#products" class="btn btn-info">products</a>
+  <a href="#user" class="btn btn-info">user</a>
+  <a href="#Manual Order" class="btn btn-info">Manual Orders</a>
+  <a href="#checks" class="btn btn-info">checks</a>
+  <span> <img src="./photo/hotel-lobby.jpg" alt="photo" width="60" height="60" style="text-align: center;">
+    <a href="#admin" class="btn btn-info">admin</a> 
+    <a href="./logout.php" class="btn btn-info">log out</a> </span>
+   
+
+</div>
+
+<div class="form-container">
+    <h2>Add User</h2>
+    <form id="userForm" action="./doneuser.php" method="post" enctype="multipart/form-data">
+        <label for="fullname">Name</label>
+        <input type="text" id="fullname" name="fullname" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+    
+        <label>Password:</label>
+        <input type="password" name="password" id="password" />
+        <i class="bi bi-eye-slash" id="togglePassword"></i>
+        <label for="">
+            Strength of password
+        </label>
+      <div class="power-container">
+          <div id="power-point"></div>
+      </div>
+
+        <meter max="8" id="password-strength-meter"></meter>
+        <p id="password-strength-text" class="strength-text"></p>
+
+        <label>Confirm Password:</label>
+        <input type="password" name="confirm-password" id="confirm-password" />
+        <i class="bi bi-eye-slash" id="toggleConfirmPassword"></i>
+        <p id="confirm-password-strength-text" class="strength-text"></p>
+        <span id="password-error" class="error-message">Passwords do not match</span>
+        
+        <br>
+        <label for="RoomNo">Room No</label>
+        <input type="number" id="RoomNo" name="Room_No" required min="0" >
+        <br>
+        <label for="Ext">Ext.</label>
+        <input type="number" id="Ext" name="Ext" required min="0" >
+        <br>
+        <div>
+            <label for="profile-pic">Profile Pic</label>
+            <input type="file" id="profile-pic" name="image" required>
+        </div>
+       
+        <br>
+        <button type="submit">Save</button>
+        <br><br>
+        <button type="reset">Reset</button>
+    </form>
+</div>
+
+<!-- Include zxcvbn library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.min.js"></script>
+
+<script>
+const togglePassword = document.querySelector('#togglePassword');
+const password = document.querySelector('#password');
+const toggleConfirmPassword = document.querySelector('#toggleConfirmPassword');
+const confirmPassword = document.querySelector('#confirm-password');
+const passwordError = document.querySelector('#password-error');
+const userForm = document.querySelector('#userForm');
+const passwordStrengthMeter = document.querySelector('#password-strength-meter');
+const passwordStrengthText = document.querySelector('#password-strength-text');
+const confirmPasswordStrengthText = document.querySelector('#confirm-password-strength-text');
+
+// Toggle password visibility
+togglePassword.addEventListener('click', () => {
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    togglePassword.classList.toggle('bi-eye');
+});
+
+toggleConfirmPassword.addEventListener('click', () => {
+    const type = confirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+    confirmPassword.setAttribute('type', type);
+    toggleConfirmPassword.classList.toggle('bi-eye');
+});
+
+// Check password match on form submission
+userForm.addEventListener('submit', (event) => {
+    if (password.value !== confirmPassword.value) {
+        passwordError.style.display = 'inline';
+        event.preventDefault(); // Prevent form submission
+    } else {
+        passwordError.style.display = 'none';
+    }
+});
+
+// Check password strength in real-time
+password.addEventListener('input', () => {
+    const result = zxcvbn(password.value);
+    const strength = result.score;
+    passwordStrengthMeter.value = strength;
+    passwordStrengthText.innerHTML = getStrengthText(strength, result.feedback);
+});
+
+// script.js
+
+let password1 = document.getElementById("password");
+let power = document.getElementById("power-point");
+password.oninput = function () {
+    let point = 0;
+    let value = password1.value;
+    let widthPower = 
+        ["1%", "25%", "50%", "75%", "100%"];
+    let colorPower = 
+        ["#D73F40", "#DC6551", "#F2B84F", "#BDE952", "#ff0000"];
+
+    if (value.length >= 8) {
+        let arrayTest = 
+            [/[0-9]/, /[a-z]/, /[A-Z]/, /[^0-9a-zA-Z]/];
+        arrayTest.forEach((item) => {
+            if (item.test(value)) {
+                point += 1;
+            }
+        });
+    }
+    power.style.width = widthPower[point];
+    power.style.backgroundColor = colorPower[point];
+};
+
+</script>
+</body>
+</html>

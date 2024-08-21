@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Checks</title>
+    <link rel="stylesheet" href="all.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="php project/cafeteria-logo.png" alt="cafeteria" width="50" height="40">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white fs-6" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white fs-6 " href="#">My orders</a>
+                        </li>
+                    </ul>
+
+                    <!-- Profile section moved inside the collapsible area -->
+                    <div class="d-flex align-items-center mt-3 mt-lg-0">
+                        <div class="px-3">
+                            <img class="rounded-circle border-2 border-black" src="php project/cofee.png"
+                                alt="Profile Picture" style="width: 50px; height: 50px;">
+                        </div>
+                        <div>
+                            <a class="nav-link text-white fs-6" href="#">Username</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-5 sbody rounded-3" style="background-color: #F8F4E1;">
+        <h1 class="my-5 text-center" style="color:#543310; margin-top: 20px;">My Orders</h1>
+        <div class="container mt-5 text-center" id="pickers">
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 col-md-6">
+                    <label for="from-date fs-5 " style="color: F8F4E1;">From: </label><br>
+                    <input type="datetime-local" id="from-date" name="from-date">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="to-date fs-5" style="color: F8F4E1;">To: </label><br>
+                    <input type="datetime-local" id="to-date" name="to-date">
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+           
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover text-center" id="orders-table">
+                    <thead>
+                        <tr style="background-color: #543310;">
+                            <th>Index</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Age</th>
+                            <th>Enrolled Course</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Rahul </td>
+                            <td>Mishra</td>
+                            <td>23</td>
+                            <td>DSA In JAVA</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class=" container row  ms-0 pb-4" style="background-color:#543310;" id="display-section">
+                <div class="col-12 col-md-4 g-4">
+                    <div class="card h-100 w-50 d-flex justify-content-center">
+                        <div class="card-body">
+                            <div style="text-align: center;">
+                                <img src="php project/tea.png" class="card-img-top"
+                                    style=" width: 90px; height: 90px;object-fit: contain;" alt="...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <br>
+            <div class="d-flex justify-content-evenly fs-4">
+                <div>Total</div>
+                <div>$100</div> 
+            </div>
+             
+        </div>
+    </div>
+
+
+
+    <footer>
+        <div style="background-color: #543310; color: #F8F4E1; text-align: center;">
+            copyright
+        </div>
+    </footer>
+
+    <script src="checks.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

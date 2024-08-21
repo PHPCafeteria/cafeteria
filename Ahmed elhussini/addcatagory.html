@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./styleAddUser.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+      crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class="scrollmenu">
+  <a href="#home" class="btn btn-info">Home</a>
+  <a href="#products" class="btn btn-info">products</a>
+  <a href="#user" class="btn btn-info">user</a>
+  <a href="#Manual Order" class="btn btn-info">Manual Orders</a>
+  <a href="#checks" class="btn btn-info">checks</a>
+  <span> <img src="./photo/hotel-lobby.jpg" alt="photo" width="60" height="60" style="text-align: center;">
+    <a href="#admin">admin</a>  </span>
+    <a href="./logout.php" class="btn btn-info">log out</a>
+
+
+</div>
+
+
+<div class="form-container">
+    <h2>Add Catagory</h2>
+    <form action="./doneaddcatg.php" method="post" enctype="multipart/form-data">
+        <label for="Catagory"> Catagory</label>
+        <input type="text" id="Catagory" name="Catagory" required>
+
+        <br>
+        <button type="submit">save</button>
+        <br><br>
+        <button type="reset">reset</button>
+    </form>
+</div>
+
+</body>
+</html>

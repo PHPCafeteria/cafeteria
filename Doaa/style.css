@@ -1,0 +1,23 @@
+.navbar{
+    background-color:#74512D;
+    height: 60px;
+}
+
+.picker{
+    background-color: F8F4E1;
+}
+
+body{
+    background-image: url("asmaa\orderUser\php project\background4.jpg");
+    background-repeat: no-repeat;
+    background-size:130%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#startDate{
+    color: #74512D;
+}
+
+table{
+    background-color: rgb(39, 111, 173);
+}
